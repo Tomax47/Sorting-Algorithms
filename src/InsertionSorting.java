@@ -1,8 +1,7 @@
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-public class BubbleSorting {
+public class InsertionSorting {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
@@ -23,7 +22,7 @@ public class BubbleSorting {
         }
 
         System.out.println("\n");
-        bubbleSort(array);
+        insertionSort(array);
         System.out.println("\nSelection-Sorted Array : ");
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
@@ -32,46 +31,27 @@ public class BubbleSorting {
     }
 
 
-
     public static void swap(int[] array, int x, int y) {
         int temp = array[x];
         array[x] = array[y];
         array[y] = temp;
 
     }
+    public static void insertionSort(int[] array) {
 
-//    public static int getSmallest(int[] array, int i) {
-//        int j =i+1;
-//        if (array[i] < array[j]) {
-//            j = i;
-//        }
-//
-//        return j;
-//    }
-
-    public static void bubbleSort(int[] array) {
-
-        int i = 0;
-        int a = 0;
-        int j = a + 1;
-
-        int t = 1;
-
-        while(i < Math.pow(array.length - 1,2)) {
-            if (array[j] < array[a]) {
-                swap(array,a,j);
-                System.out.println("Take"+t+" | Swapped "+a+" & "+j);
+        for (int i = 0; i < array.length; i++) {
+            int j = 1;
+            int[] newArray = new int[i+1];
+            for (int k = 0; k < newArray.length; k++) {
+                newArray[k] = array[k];
             }
-
-            if (a == array.length - 2) {
-                a = 0;
-                j = a + 1;
-                t++;
-            } else {
-                a++;
+            for (int k = 0; k < newArray.length - 1; k++) {
+                if(array[k] > array[j]) {
+                    swap(array,k,j);
+                    System.out.println("Swaped "+k+" & "+j);
+                }
                 j++;
             }
-            i++;
         }
     }
 }

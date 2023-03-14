@@ -23,6 +23,7 @@ public class Main {
             System.out.print(array[i]+" ");
         }
 
+        System.out.println("\n");
         simpleAscendingSort(array);
         simpleDescendingSort(array);
     }
@@ -36,6 +37,7 @@ public class Main {
                     int temp = array[i];
                     array[i] = array[j];
                     array[j] = temp;
+                    System.out.println("Swapped "+i+" & "+j);
                 }
             }
         }
