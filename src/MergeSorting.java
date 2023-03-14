@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -22,11 +24,19 @@ public class MergeSorting {
         }
 
         System.out.println("\n");
+
+        //Calculating the start & the end time
+        long start = System.currentTimeMillis();
         mergeSort(array);
+        long end = System.currentTimeMillis();
         System.out.println("\nMerge-Sorted Array : ");
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
         }
+
+        //Printing out the time it took to do the sorting
+        NumberFormat formatter = new DecimalFormat("#0.00000");
+        System.out.print("\nExecution time is " + formatter.format((end - start) / 1000d) + " seconds");
     }
 
     public static void mergeSort(int[] array) {
@@ -85,4 +95,5 @@ public class MergeSorting {
             System.out.println("Added "+j+" to the end\n");
         }
     }
+
 }

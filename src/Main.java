@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -23,9 +25,23 @@ public class Main {
             System.out.print(array[i]+" ");
         }
 
+        //Calculating the start & the end time for each simpleAscendingSort(array) & simpleDescendingSort(array)
         System.out.println("\n");
+        long start = System.currentTimeMillis();
         simpleAscendingSort(array);
+        long end = System.currentTimeMillis();
+
+        long start2 = System.currentTimeMillis();
         simpleDescendingSort(array);
+        long end2 = System.currentTimeMillis();
+
+        //Printing out the time it took to do the sorting for the simpleAscendingSort(array);
+        NumberFormat formatter = new DecimalFormat("#0.00000");
+        System.out.print("\nExecution time is for simpleAscendingSort() " + formatter.format((end - start) / 1000d) + " seconds");
+
+        //Printing out the time it took to do the sorting simpleDescendingSort(array);
+        NumberFormat formatter2 = new DecimalFormat("#0.00000");
+        System.out.print("\nExecution time is for simpleDescendingSort() " + formatter2.format((end2 - start2) / 1000d) + " seconds");
     }
 
 
