@@ -22,6 +22,7 @@ public class InsertionSorting {
         }
 
         System.out.println("\n");
+//NEEDS DEBUGGING =>        insSort(array);
         insertionSort(array);
         System.out.println("\nSelection-Sorted Array : ");
         for (int i = 0; i < array.length; i++) {
@@ -54,4 +55,27 @@ public class InsertionSorting {
             }
         }
     }
+
+
+
+
+//    public static void insert(int[] array, int i) {
+//        int key = array[i];
+//        int j = i - 1;
+//
+//        while (j>=0 && array[i]>key) {
+//            array[j+1] = array[j];
+//            j--;
+//        }
+//
+//        array[j+1] = key;
+//    }
+//
+//    public static void insSort(int[] array) {
+//        int i = 1;
+//        while (i < array.length) {
+//            insert(array,i);
+//            i++;
+//        }
+//    }
 }
